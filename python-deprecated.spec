@@ -25,7 +25,7 @@ Python @deprecated decorator to deprecate old python classes,
 functions or methods.
 
 %prep
-%autosetup -n %{pkgname}-%{version}
+%autosetup -n %{srcname}-%{version}
 rm -rf %{pkgname}.egg-info
 
 %build
