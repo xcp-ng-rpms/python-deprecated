@@ -3,12 +3,14 @@
 
 Name:           python-%{pkgname}
 Version:        1.2.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Python decorator to deprecate old python classes, functions or methods
 License:        MIT
 URL:            https://github.com/tantale/%{pkgname}
 Source0:        https://files.pythonhosted.org/packages/source/D/%{srcname}/%{srcname}-%{version}.tar.gz
 BuildArch:      noarch
+
+%{?python_enable_dependency_generator}
 
 %description
 Python @deprecated decorator to deprecate old python classes,
@@ -42,6 +44,9 @@ rm -rf %{pkgname}.egg-info
 
 
 %changelog
+* Thu Aug 01 2019 Petr Hracek <phracek@redhat.com> - 1.2.6-3
+- Enable python dependency generator
+
 * Fri Jul 26 2019 Petr Hracek <phracek@redhat.com> - 1.2.6-2
 - Fix python3_sitelib issue
 
