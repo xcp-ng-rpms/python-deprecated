@@ -3,7 +3,7 @@
 
 Name:           python-%{pkgname}
 Version:        1.2.6
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Python decorator to deprecate old python classes, functions or methods
 License:        MIT
 URL:            https://github.com/tantale/%{pkgname}
@@ -44,6 +44,9 @@ rm -rf %{pkgname}.egg-info
 
 
 %changelog
+* Mon Aug 19 2019 Miro Hrončok <mhroncok@redhat.com> - 1.2.6-4
+- Rebuilt for Python 3.8
+
 * Thu Aug 01 2019 Petr Hracek <phracek@redhat.com> - 1.2.6-3
 - Enable python dependency generator
 
