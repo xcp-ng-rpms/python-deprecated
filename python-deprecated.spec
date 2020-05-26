@@ -3,7 +3,7 @@
 
 Name:           python-%{pkgname}
 Version:        1.2.6
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        Python decorator to deprecate old python classes, functions or methods
 License:        MIT
 URL:            https://github.com/tantale/%{pkgname}
@@ -44,6 +44,9 @@ rm -rf %{pkgname}.egg-info
 
 
 %changelog
+* Tue May 26 2020 Miro Hrončok <mhroncok@redhat.com> - 1.2.6-7
+- Rebuilt for Python 3.9
+
 * Thu Jan 30 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.2.6-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
