@@ -1,3 +1,6 @@
+synced_files:
+  - python-deprecated.spec
+  - .packit.yml
 upstream_package_name: Deprecated
 upstream_tag_template: v{version}
 downstream_package_name: python-deprecated
