@@ -2,7 +2,7 @@
 %global pkgname deprecated
 
 Name:           python-%{pkgname}
-Version:        1.2.11
+Version:        1.2.12
 Release:        1%{?dist}
 Summary:        Python decorator to deprecate old python classes, functions or methods
 License:        MIT
@@ -42,6 +42,9 @@ rm -rf %{pkgname}.egg-info
 
 
 %changelog
+* Sat Mar 13 2021 Packit Service <user-cont-team+packit-service@redhat.com> - 1.2.12-1
+- new upstream release: 1.2.12
+
 * Sat Feb 06 2021 Hunor Csomortáni <csomh@redhat.com> - 1.2.11-1
 - new upstream release: 1.2.11
 
