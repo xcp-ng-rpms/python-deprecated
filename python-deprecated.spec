@@ -3,7 +3,7 @@
 
 Name:           python-%{pkgname}
 Version:        1.2.12
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Python decorator to deprecate old python classes, functions or methods
 License:        MIT
 URL:            https://github.com/tantale/%{pkgname}
@@ -42,6 +42,9 @@ rm -rf %{pkgname}.egg-info
 
 
 %changelog
+* Fri Jun 04 2021 Python Maint <python-maint@redhat.com> - 1.2.12-2
+- Rebuilt for Python 3.10
+
 * Sat Mar 13 2021 Packit Service <user-cont-team+packit-service@redhat.com> - 1.2.12-1
 - new upstream release: 1.2.12
 
