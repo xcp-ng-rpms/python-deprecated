@@ -2,46 +2,51 @@
 %global pkgname deprecated
 
 Name:           python-%{pkgname}
-Version:        1.2.12
-Release:        4%{?dist}
+Version:        1.2.13
+Release:        1%{?dist}
 Summary:        Python decorator to deprecate old python classes, functions or methods
 License:        MIT
 URL:            https://github.com/tantale/%{pkgname}
 Source0:        %{pypi_source}
 BuildArch:      noarch
 
-%description
-Python @deprecated decorator to deprecate old python classes,
-functions or methods.
+BuildRequires:  python3-devel
+
+%global _description %{expand:
+Python @deprecated decorator to deprecate old python classes, functions or
+methods.}
+
+%description %{_description}
 
 %package -n python3-%{pkgname}
 Summary:        %{summary}
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
-%{?python_provide:%python_provide python3-%{pkgname}}
-
-%description -n python3-%{pkgname}
-Python @deprecated decorator to deprecate old python classes,
-functions or methods.
+%description -n python3-%{pkgname} %{_description}
 
 %prep
 %autosetup -n %{srcname}-%{version}
-rm -rf %{pkgname}.egg-info
+
+%generate_buildrequires
+%pyproject_buildrequires -r
 
 %build
-%py3_build
+%pyproject_wheel
 
 %install
-%py3_install
+%pyproject_install
+%pyproject_save_files %{pkgname}
 
-%files -n python3-%{pkgname}
+%check
+%pyproject_check_import
+
+%files -n python3-%{pkgname} -f %{pyproject_files}
 %license LICENSE.rst
 %doc README.md
-%{python3_sitelib}/%{pkgname}/
-%{python3_sitelib}/%{srcname}-*.egg-info/
 
 
 %changelog
+* Fri Apr 29 2022 Hunor Csomortáni <csomh@redhat.com> - 1.2.13-1
+- Update to version 1.2.13
+
 * Fri Jan 21 2022 Fedora Release Engineering <releng@fedoraproject.org> - 1.2.12-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 
