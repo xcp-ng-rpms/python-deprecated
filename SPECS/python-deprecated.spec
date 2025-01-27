@@ -7,7 +7,7 @@
 
 Name:           python-%{pkgname}
 Version:        1.2.14
-Release:        %{?xsrel}%{?dist}
+Release:        %{?xsrel}.1%{?dist}
 Summary:        Python decorator to deprecate old python classes, functions or methods
 License:        MIT
 URL:            https://github.com/tantale/%{pkgname}
@@ -23,6 +23,8 @@ Summary:        %{summary}
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 %{?python_provide:%python_provide python3-%{pkgname}}
+
+Requires:       python3-wrapt
 
 %description -n python3-%{pkgname}
 Python @deprecated decorator to deprecate old python classes,
@@ -46,6 +48,9 @@ rm -rf %{pkgname}.egg-info
 
 
 %changelog
+* Mon Jan 27 2025 Yann Dirson <yann.dirson@vates.tech> - 1.2.14-3.1
+* Add missing Requires: python3-wrapt
+
 * Mon Aug 19 2024 Marcus Granado <marcus.granado@cloud.com> - 1.2.14-3
 - Bump release and rebuild
 
